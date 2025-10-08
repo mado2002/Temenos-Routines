@@ -30,7 +30,7 @@ public class FT extends RecordLifecycle {
             AccountRecord acc=new AccountRecord(da.getRecord("ACCOUNT", debitAccountNo));
             String category =acc.getCategory().getValue();
             logger.info(category);
-            if(!category.equalsIgnoreCase("6001"))
+            if(!category.equalsIgnoreCase("6001")) // note: .equals() doesn't work with temenos.
             {
                 ft.getDebitAcctNo().setError("Debit Account is not a Saving Account");
             }
